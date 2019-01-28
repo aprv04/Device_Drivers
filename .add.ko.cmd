@@ -1,0 +1,1 @@
+cmd_/home/debian/DD/add/add.ko := ld -EL -r  -T /usr/src/linux-headers-3.8.13-bone81/scripts/module-common.lds --build-id  -o /home/debian/DD/add/add.ko /home/debian/DD/add/add.o /home/debian/DD/add/add.mod.o

@@ -1,0 +1,1 @@
+cmd_/home/debian/DD/add/export_sym.ko := ld -EL -r  -T /usr/src/linux-headers-3.8.13-bone81/scripts/module-common.lds --build-id  -o /home/debian/DD/add/export_sym.ko /home/debian/DD/add/export_sym.o /home/debian/DD/add/export_sym.mod.o

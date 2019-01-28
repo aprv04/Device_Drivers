@@ -1,13 +1,9 @@
-	obj-m := add.o 
-        KERNELDIR =/lib/modules/$(shell uname -r)/build
-        PWD :=$(shell pwd)
+obj-m=test.o
+KERN_DIR=/lib/modules/$(shell uname -r)/build
+PWD=$(shell pwd)
 
-default:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
-
-install:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules_install
+modules:
+	$(MAKE) -C ${KERN_DIR} M=${PWD} modules
 
 clean:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
-
+	$(MAKE) -C ${KERN_DIR} M=${PWD} clean

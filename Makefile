@@ -1,8 +1,13 @@
-obj-m=workqueue.o
-KERN_DIR=/lib/modules/$(shell uname -r)/build
-PWD=$(shell pwd)
+	obj-m := mod_array.o
+	KERNELDIR = /lib/modules/$(shell uname -r)/build
 
-modules:
-	$(MAKE) -C ${KERN_DIR} M=${PWD} modules
+	PWD :=$(shell pwd)
+
+default:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+
+install:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules_install
+
 clean:
-	$(MAKE) -C ${KERN_DIR} M=${PWD} clean
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean

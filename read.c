@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<fcntl.h>
 
@@ -5,18 +6,26 @@
 
 int main()
 {
-	int fd,ret;
-	char buf[SIZE];
+        int fd,ret;
+        char buf[SIZE];
 
-	fd = open("/dev/test0", O_RDWR);
+        fd = open("/dev/circ_buf0", O_RDWR);
 
-	if(fd<0)
-	{
-		perror("Error opening the device\n");
-		return -1;
-	}
-	ret = read(fd,buf,SIZE);
-	
-	printf("data read is %s\n",buf);
-	return 0;
+        if(fd<0)
+        {
+                perror("Error opening the device\n");
+                return -1;
+        }
+        read(fd,buf,SIZE);
+
+        printf("data read is %s\n",buf);
+        return 0;
 }
+
+
+
+
+
+
+
+

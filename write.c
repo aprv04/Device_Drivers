@@ -1,21 +1,21 @@
 #include<stdio.h>
 #include<fcntl.h>
-
+#define SIZE 20
 int main()
 {
 
-	int fd,ret;
-	char buf="Hello DESD\n";
+        int fd,ret;
+        char buf[SIZE]="Hello DESD\n";
 
-	fd=open("/dev/test0",O_RDWR);
-	if(fd<0)
-	{
-		perror("Error operation\n");
-	return -1;
-	}
+        fd=open("/dev/circ_buf0",O_RDWR);
+        if(fd<0)
+        {
+                perror("Error operation\n");
+        return -1;
+        }
 
-	ret = write(fd,buf,sizeof(buf));
-	return 0;
+         write(fd,buf,sizeof(buf));
+        return 0;
 }
 
 

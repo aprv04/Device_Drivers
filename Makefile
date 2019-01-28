@@ -1,4 +1,4 @@
-obj-m=test.o
+obj-m=circ_buf.o
 KERN_DIR=/lib/modules/$(shell uname -r)/build
 PWD=$(shell pwd)
 

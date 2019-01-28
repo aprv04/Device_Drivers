@@ -6,7 +6,7 @@ int main()
 {
 
         int fd,ret;
-        char buf[SIZE]="Hello World\n";
+        char buf[SIZE]="Hello world\n";
 
         fd=open("/dev/test0",O_RDWR);
         if(fd<0)
@@ -15,19 +15,7 @@ int main()
         return -1;
         }
 
-        ret = write(fd,buf,sizeof(buf));
-	if(ret <= sizeof(buf))
-        {
-
-           printf("succesfully written\n");
-         }
-
-         else
-         {
-            printf("error writing to device\n");
-         }
-          
-        
+        write(fd,buf,sizeof(buf));
         return 0;
 }
 
